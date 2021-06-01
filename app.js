@@ -39,6 +39,7 @@ mongoose.connect(dbUrl, {
     useUnifiedTopology: true,
     useFindAndModify:false
 })
+const rt;
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connnection error:"));
 db.once("open", () =>
