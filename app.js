@@ -88,6 +88,11 @@ const scriptSrcUrls = [
     "https://kit.fontawesome.com",
     "https://cdnjs.cloudflare.com",
     "https://cdn.jsdelivr.net",
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js",
+    "https://cdn.jsdelivr.net",
+    "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
+    "https://fonts.googleapis.com/",
+    "https://drive.google.com"
 ];
 const styleSrcUrls = [
     "https://kit-free.fontawesome.com",
@@ -97,13 +102,26 @@ const styleSrcUrls = [
     "https://fonts.googleapis.com",
     "https://use.fontawesome.com",
     "https://cdn.jsdelivr.net/",
+    "https://fonts.googleapis.com",
+    "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
+    "https://fonts.googleapis.com/",
+    "https://drive.google.com"
 ];
 const connectSrcUrls = [
     "https://api.mapbox.com",
     "https://*.tiles.mapbox.com",
     "https://events.mapbox.com",
+    "https://fonts.googleapis.com",
+    "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
+    "https://fonts.googleapis.com/",
+    "https://drive.google.com"
 ];
-const fontSrcUrls = [];
+const fontSrcUrls = [
+    "https://fonts.googleapis.com",
+    "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
+    "https://fonts.googleapis.com/",
+    "https://drive.google.com"
+];
 app.use(
     helmet.contentSecurityPolicy({
         directives: {

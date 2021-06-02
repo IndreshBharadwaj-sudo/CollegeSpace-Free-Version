@@ -6,6 +6,10 @@ const catchAsync = require("../utils/catchAsync");
 const users = require('../controllers/users');
 const { isValidUser } = require('../middleware');
 
+router.get('/contribute', (req, res) =>
+{
+    res.render('courses/contribute');
+})
 router.route('/register')
 .get( users.renderRegister)
 .post(isValidUser,catchAsync(users.register))

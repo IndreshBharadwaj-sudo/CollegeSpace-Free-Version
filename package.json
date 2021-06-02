@@ -26,6 +26,7 @@
     "helmet": "^4.6.0",
     "joi": "^17.4.0",
     "json-circular-stringify": "^1.0.1",
+    "materialize-stepper": "^3.1.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.12.11",
     "multer": "^1.4.2",
