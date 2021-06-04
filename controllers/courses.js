@@ -2,7 +2,7 @@ const Course = require('../models/courses');
 
 module.exports.index = async (req, res) =>
 {
-    const courses = await Course.find({});
+    const courses = await Course.find({}).sort({"title":1});
     res.render('courses/index', { courses });
 }
 
