@@ -2,7 +2,7 @@ const Course = require('../models/courses');
 
 module.exports.index = async (req, res) =>
 {
-    const courses = await Course.find({}).sort({"title":1}).collation({locale: "en_US", numericOrdering: true});
+    const courses = await Course.find({"name":/R/}).sort({"title":1}).collation({locale: "en_US", numericOrdering: true});
     res.render('courses/index', { courses });
 }
 
