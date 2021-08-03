@@ -18,7 +18,6 @@ router.get('/new',isLoggedIn,catchAsync(async (req, res) =>
 }))
 
 router.post('/', isLoggedIn, validateMaterial,upload.single('material[files]'),catchAsync(materials.addMaterial));
-
 router.delete('/:materialId', isLoggedIn, isMaterialAuthor, catchAsync(materials.deleteMaterial));
 
 module.exports = router;
