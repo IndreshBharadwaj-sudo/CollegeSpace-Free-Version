@@ -82,19 +82,16 @@ const sessionConfig = {
 }
 
 const scriptSrcUrls = [
+    "https://code.jquery.com",
     "https://stackpath.bootstrapcdn.com",
     "https://api.tiles.mapbox.com",
     "https://api.mapbox.com",
     "https://kit.fontawesome.com",
     "https://cdnjs.cloudflare.com",
     "https://cdn.jsdelivr.net",
-    "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js",
-    "https://cdn.jsdelivr.net",
-    "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
-    "https://fonts.googleapis.com/",
-    "https://drive.google.com"
 ];
 const styleSrcUrls = [
+    "https://code.jquery.com/jquery-1.12.4.js",
     "https://kit-free.fontawesome.com",
     "https://stackpath.bootstrapcdn.com",
     "https://api.mapbox.com",
@@ -102,30 +99,20 @@ const styleSrcUrls = [
     "https://fonts.googleapis.com",
     "https://use.fontawesome.com",
     "https://cdn.jsdelivr.net/",
-    "https://fonts.googleapis.com",
-    "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
-    "https://fonts.googleapis.com/",
-    "https://drive.google.com"
+    "http://code.jquery.com",
 ];
-const connectSrcUrls = [
+const connectSrcUrls= [
+    "https://code.jquery.com/jquery-1.12.4.js",
     "https://api.mapbox.com",
     "https://*.tiles.mapbox.com",
     "https://events.mapbox.com",
-    "https://fonts.googleapis.com",
-    "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
-    "https://fonts.googleapis.com/",
-    "https://drive.google.com"
+    "http://code.jquery.com",
 ];
-const fontSrcUrls = [
-    "https://fonts.googleapis.com",
-    "https://use.fontawesome.com/releases/v5.3.1/css/all.css",
-    "https://fonts.googleapis.com/",
-    "https://drive.google.com"
-];
+const fontSrcUrls = [];
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
-            defaultSrc: [],
+            defaultSrc: ["'self'"],
             connectSrc: ["'self'", ...connectSrcUrls],
             scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
             styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
@@ -143,6 +130,7 @@ app.use(
         },
     })
 );
+
 
 app.use(flash());
 app.use(session(sessionConfig));

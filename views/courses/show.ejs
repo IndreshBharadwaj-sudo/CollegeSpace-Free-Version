@@ -41,7 +41,7 @@
     <% } %>
     <div class="mb-4">
     <form action="/courses/<%=course._id%>/search" method="POST" class="d-flex">
-        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" id="searchbar" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-warning" type="submit">Search</button>
       </form>
     </div>
@@ -59,6 +59,36 @@
             </div>
         </div>
     <% } %> 
+    
     <footer>
         <a href="/courses" class="btn btn-warning my-2">Back To All Courses</a>
     </footer>
+
+    <script>
+        $(function() {
+        $('#searchbar').autocomplete({
+        source: function(req, res) {
+            req.course_id='<%-course._id%>';
+        $.ajax({
+        url:"autocomplete/",
+        dataType:"jsonp",
+        type: "GET",
+        data: req,
+        success: function(data,text) {
+            // console.log("asjd");
+            res(data)
+        },
+        error: function(err){
+            alert(err.responseText);
+        }
+        });
+        },
+        minLength:1,
+        select: function(event, ui){
+        if(ui.item){
+        $('#searchbar').text(ui.item.label);
+        }
+    }
+});
+        });
+</script>     

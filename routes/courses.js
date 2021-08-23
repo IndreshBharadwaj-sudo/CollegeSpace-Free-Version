@@ -31,6 +31,32 @@ router.post('/:id/search', async (req, res) =>
     // res.render('courses/searchresult', { JSON.stringify(materials) });
 })
 
+router.get('/autocomplete/',function(req,res,next){
+    const course_id=req.query.course_id;
+    var regx=new RegExp(req.query["term"],'i');
+    var materials=Material.find({description:regx,courseID:course_id},{'description':1}).sort({"updated_at":-1}).sort({"created_at":-1}).limit(20);
+    materials.exec(function(err,data){
+        var result=[];
+        if(!err)
+        {
+            if(data&&data.length&&data.length>0)
+            {
+                data.forEach(user=>{
+                    let obj={
+                        id:user._id,
+                        label:user.description
+                    };
+                    result.push(obj);
+                });
+            }
+            // console.log(result);
+            res.jsonp(result);
+        }
+    });
+    // next();
+})
+
+
 router.route('/')
 .get(catchAsync(courses.index))
 .post(isLoggedIn, validateCourse, catchAsync(courses.createCourse))
