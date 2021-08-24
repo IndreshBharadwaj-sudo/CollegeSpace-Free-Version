@@ -15,21 +15,27 @@
                     </p>
                     <p class="text-muted"><em>Before Adding New material search Your Material To Avoid Duplicate</em></p>
                 </div>
-                <% if(currentUser&&course.author.equals(currentUser._id)){ %> 
+                <!-- <% if(currentUser&&course.author.equals(currentUser._id)){ %> 
                 <div class="col-6">
                     <div class="d-flex align-items-end flex-column bd-highlight justify-content-between">
                         <div class="p-2 bd-highlight">
                             <a href="/courses/<%=course._id%>/edit" class="btn btn-info" style="width:200px;">Edit
                                 Course</a>
                         </div>
-                        <!-- <div class="p-2 bd-highlight">
-                            <form action="/courses/course._id?_method=DELETE" method="POST">
+                        <div class="p-2 bd-highlight">
+                            <!-- <form action="/courses/course._id?_method=DELETE" method="POST">
                                 <button class="btn btn-danger mx-0" style="width:200px;">Delete</button>
-                            </form>
-                        </div> -->
+                            </form> -->
+                        <!-- </div>
                     </div>
+                </div> -->
+                <!-- <% } %> -->
+                <div class="col-6">
+                    <a href="https://www.nitw.ac.in/main/BTechProgrammes/nitw/">
+                        <img alt="W3Schools" src="https://images.unsplash.com/photo-1516201580490-33550d32de5c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" width=22% height=55% style="border-radius: 50%; margin-left: 60%; margin-top: 10%;">
+                        </a>
+                        <h6 class="text-muted" style="margin-left: 66%; margin-top: 1.5%;"><em>Syllabus</em></h6>
                 </div>
-                <% } %> 
             </div>
             <hr class="my-4">
         </div>
