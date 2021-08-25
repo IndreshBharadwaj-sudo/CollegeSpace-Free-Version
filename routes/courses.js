@@ -50,7 +50,7 @@ router.get('/autocomplete/',function(req,res,next){
                 });
             }
             // console.log(result);
-            res.jsonp(result);
+            res.json(result);
         }
     });
     // next();

@@ -71,6 +71,11 @@
     </footer>
 
     <script>
+        function init(myArray)
+        {
+            const newArray= myArray.map(element => element.label);
+            console.log(newArray);
+        }
         $(function() {
         $('#searchbar').autocomplete({
         source: function(req, res) {
@@ -85,14 +90,16 @@
             res(data)
         },
         error: function(err){
-            alert(err.responseText);
+            let myArray=JSON.parse(err.responseText);
+            const newArray= myArray.map(element => element.label);
+            res(newArray);
         }
         });
         },
         minLength:1,
         select: function(event, ui){
         if(ui.item){
-        $('#searchbar').text(ui.item.label);
+        $('#searchbar').val(ui.item.label);
         }
     }
 });
