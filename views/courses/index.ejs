@@ -23,7 +23,7 @@ return images[num]
         <% for(let course of courses){ %>
           <div class="col">
             <div class="card my-3 shadow-lg p-3 mb-5 bg-white rounded" style="width: auto;">
-      <img class="mx-auto img-fluid" src="<%=number()%>" alt="..." style="max-width: 324px; max-height: 218px; border-radius: 2%;">
+      <img class="img-thumbnail mx-auto" src="<%=number()%>" alt="..." style="max-width: 100%; max-height: 218px; border-radius: 2%;">
       <div class="card-body" style="text-align: center;">
         <h5 class="card-title"><%= course.title %></h5>
         <p class="card-text"><%= course.description %> </p>
