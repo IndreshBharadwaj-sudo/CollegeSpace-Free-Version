@@ -89,6 +89,9 @@ const scriptSrcUrls = [
     "https://kit.fontawesome.com",
     "https://cdnjs.cloudflare.com",
     "https://cdn.jsdelivr.net",
+    "https://cdnjs.cloudflare.com",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
+    
 ];
 const styleSrcUrls = [
     "https://code.jquery.com/jquery-1.12.4.js",
@@ -100,6 +103,8 @@ const styleSrcUrls = [
     "https://use.fontawesome.com",
     "https://cdn.jsdelivr.net/",
     "http://code.jquery.com",
+    "https://cdnjs.cloudflare.com",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
 ];
 const connectSrcUrls= [
     "https://code.jquery.com/jquery-1.12.4.js",
@@ -107,6 +112,8 @@ const connectSrcUrls= [
     "https://*.tiles.mapbox.com",
     "https://events.mapbox.com",
     "http://code.jquery.com",
+    "https://cdnjs.cloudflare.com",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css",
 ];
 const fontSrcUrls = [];
 app.use(
@@ -155,6 +162,11 @@ app.use('/courses/:id/materials', materialsRoutes);
 app.get('/', (req, res) =>
 {
     res.render('home');
+})
+
+app.get('/about',(req,res) =>
+{
+    res.render('about');
 })
 
 
